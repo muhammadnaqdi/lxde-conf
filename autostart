@@ -1,0 +1,3 @@
+@picom
+@nitrogen --restore
+@redshift -l 29.6:52.6
