@@ -93,17 +93,6 @@
 	 (racket-mode .             rainbow-delimiters-mode)
 	 (racket-repl-mode .        rainbow-delimiters-mode)))
 
-(use-package pyvenv
-  :ensure t
-  :config
-  (pyvenv-mode t)
-  (setq pyvenv-post-activate-hooks
-        (list (lambda ()
-                (setq python-shell-interpreter (concat pyvenv-virtual-env "bin/python3")))))
-  (setq pyvenv-post-deactivate-hooks
-        (list (lambda ()
-                (setq python-shell-interpreter "python3")))))
-
 (use-package yasnippet
   :ensure t
   :config
@@ -113,6 +102,9 @@
   :ensure t
   :config
   (setq yas-snippet-dirs (list (concat user-emacs-directory "snippets"))))
+
+(use-package csharp-mode
+  :ensure t)
 
 ;; (use-package helm
 ;;   :ensure t
@@ -150,3 +142,14 @@
 
 ;; (use-package magit
 ;;   :ensure t)
+
+;; (use-package pyvenv
+;;   :ensure t
+;;   :config
+;;   (pyvenv-mode t)
+;;   (setq pyvenv-post-activate-hooks
+;;         (list (lambda ()
+;;                 (setq python-shell-interpreter (concat pyvenv-virtual-env "bin/python3")))))
+;;   (setq pyvenv-post-deactivate-hooks
+;;         (list (lambda ()
+;;                 (setq python-shell-interpreter "python3")))))
